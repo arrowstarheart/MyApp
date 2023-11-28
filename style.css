@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} /* removes basic styling of the browser */
+
+body{
+    background-image: linear-gradient(90deg, #FFC0CB, #81D8D0);
+    color: white;
+    font-family: "Montserrat";
+    min-height: 100vh; /*viewport height*/
+}
+
+header{
+    font-size: 1.5rem;
+}
+
+header, form{
+    min-height: 20vh;
+    display: flex; /*The flex-wrap property tells the container to wrap its child elements onto the next line if there's not enough space for them on the first line*/
+    justify-content: center; /*justifies to the centre*/
+    align-items: center; /*aligns to the centre vertically*/
+}
+
+form input, form button{
+    padding: 0.5rem; /*Padding is used to create space around an element's content, inside of any defined borders*/
+    font-size: 2rem; /* rem is the size of the root element, set the size for other elements and makes it easier to manage elements across different devices and screen sizes*/
+    border: none;
+    background: white;
+}
+
+form button{
+    color:#81D8D0;
+    background: white;
+    cursor:pointer;
+    transition: all 0.3s ease; /* allows you to change property values smoothly, over a given duration. Mouse over the element below to see a CSS transition effect*/
+}
+
+form button:hover{
+    background: teal;
+    color: white;
+}
+
+.todo-container{ /* dot to select a class, # to select an ID*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-list {
+    min-width: 30%;
+    list-style: none; /* remove list pointers/markers */
+}
+
+.todo{
+    font-family: "Roboto";
+    margin: 2rem;
+    background: white;
+    color: teal;
+    font-size: 1.5rem;
+    display: flex; /* to line up the input box and buttons side by side*/
+    justify-content: space-between; /* adds space between the buttons/elements*/
+    align-items: center;
+    transition: all 0.5s ease;
+}
+
+.todo li {
+    flex: 1; /*moves buttons together at the end*/
+    margin: 0.5rem;
+}
+
+.trash-btn, .complete-btn {
+    background: #C6DEFF;
+    color: white; /*colour of icon*/
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.complete-btn{
+    background: #E799A3;
+}
+
+.todo-item{
+    padding: 0rem, 0.5rem;
+}
+
+.fa-trash,
+.fa-check {
+    pointer-events: none; /*stop user from clicking the icons instead of the buttons*/
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.fall{
+    transform: translateY(8rem) rotateZ(20deg);
+    opacity: 0;
+}
+
+/*clear styles of select */
+
+select { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+}
+
+.select{
+    margin: 1rem; /* space it out from the item input box */
+    position: relative; /* position: relative places an element relative to its current position without changing the layout around it, relative to the viewport */
+    overflow: hidden; /* With the hidden value, the overflow is clipped, and the rest of the content is hidden */
+
+}
+
+select {
+    color: teal;
+    width: 10rem;
+    cursor: pointer;
+    padding: 1rem;
+}
+
+/* adds an arrow indicator after the select element */
+
+.select::after {
+    content: "\25BC"; 
+    position: absolute;
+    background: pink;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    pointer-events: none; /* disallow clicking on it but to use it to view the options */
+    transition: all 0.3s ease;
+}
+
+.select:hover::after{
+    background: white;
+    color: pink;
+}
